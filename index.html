@@ -5,42 +5,204 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CourseHelper Legal</title>
   <style>
-    :root { color-scheme: light; --bg:#eef4ff; --card:#ffffff; --text:#14213d; --muted:#5c6b89; --line:#d8e2f3; --brand:#3767ea; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: linear-gradient(180deg,#eef4ff 0%,#f9fbff 100%); color:var(--text); }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 56px 20px 72px; }
-    .hero { background: rgba(255,255,255,.86); border:1px solid var(--line); border-radius:28px; padding:32px; box-shadow: 0 18px 50px rgba(42,72,149,.08); }
-    .eyebrow { display:inline-block; padding:6px 10px; border-radius:999px; background:#f3f6ff; border:1px solid var(--line); color:var(--muted); font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
-    h1 { margin:16px 0 10px; font-size:44px; line-height:1; letter-spacing:-.04em; }
-    p { color:var(--muted); line-height:1.65; margin:0; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:18px; }
-    .card { display:block; text-decoration:none; background:var(--card); border:1px solid var(--line); border-radius:24px; padding:22px; color:inherit; box-shadow: 0 12px 32px rgba(42,72,149,.06); }
-    .card h2 { margin:0 0 8px; font-size:24px; }
-    .card small { display:block; margin-top:14px; color:var(--brand); font-weight:700; }
-    .meta { margin-top:24px; font-size:14px; color:var(--muted); }
-    a.inline { color:var(--brand); }
+    :root {
+      color-scheme: light;
+      --bg: #eef4ff;
+      --card: rgba(255,255,255,.92);
+      --text: #14213d;
+      --muted: #5c6b89;
+      --line: #d8e2f3;
+      --brand: #3767ea;
+      --shadow: 0 18px 50px rgba(42,72,149,.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eef4ff 0%, #f9fbff 100%);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 56px 20px 72px;
+    }
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+    .top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f3f6ff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .toggle {
+      display: flex;
+      gap: 8px;
+    }
+    .toggle button {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      border-radius: 999px;
+      min-width: 58px;
+      padding: 8px 14px;
+      font: 600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      cursor: pointer;
+    }
+    .toggle button.active {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+    }
+    h1 {
+      margin: 16px 0 10px;
+      font-size: 44px;
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .card {
+      display: block;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      color: inherit;
+      box-shadow: 0 12px 32px rgba(42,72,149,.06);
+    }
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+    .card small {
+      display: block;
+      margin-top: 14px;
+      color: var(--brand);
+      font-weight: 700;
+    }
+    .meta {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .meta a {
+      color: var(--brand);
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="hero">
-      <span class="eyebrow">CourseHelper legal</span>
-      <h1>Legal documents</h1>
-      <p>Public copies of the CourseHelper Privacy Policy and Terms of Use.</p>
+      <div class="top">
+        <span class="eyebrow" data-i18n="eyebrow">CourseHelper legal</span>
+        <div class="toggle" aria-label="Language">
+          <button id="lang-en" type="button">EN</button>
+          <button id="lang-zh" type="button">&#20013;&#25991;</button>
+        </div>
+      </div>
+
+      <h1 data-i18n="title">Legal documents</h1>
+      <p data-i18n="subtitle">Public copies of the CourseHelper Privacy Policy and Terms of Use.</p>
+
       <div class="grid">
-        <a class="card" href="privacy.html">
-          <h2>Privacy Policy</h2>
-          <p>How CourseHelper handles recordings, files, AI processing, subscriptions, and account data.</p>
-          <small>Open privacy policy</small>
+        <a class="card" id="privacy-link" href="privacy.html">
+          <h2 data-i18n="privacyTitle">Privacy Policy</h2>
+          <p data-i18n="privacyBody">How CourseHelper handles recordings, files, AI processing, subscriptions, and account data.</p>
+          <small data-i18n="privacyCta">Open privacy policy</small>
         </a>
-        <a class="card" href="terms.html">
-          <h2>Terms of Use</h2>
-          <p>Rules for recordings, AI features, subscriptions, and credits.</p>
-          <small>Open terms</small>
+        <a class="card" id="terms-link" href="terms.html">
+          <h2 data-i18n="termsTitle">Terms of Use</h2>
+          <p data-i18n="termsBody">Rules for recordings, AI features, subscriptions, and credits.</p>
+          <small data-i18n="termsCta">Open terms</small>
         </a>
       </div>
-      <p class="meta">Contact: <a class="inline" href="mailto:syf1248226176@gmail.com">syf1248226176@gmail.com</a></p>
+
+      <p class="meta">
+        <span data-i18n="contactLabel">Contact:</span>
+        <a href="mailto:syf1248226176@gmail.com">syf1248226176@gmail.com</a>
+      </p>
     </section>
   </main>
+
+  <script>
+    const COPY = {
+      en: {
+        eyebrow: "CourseHelper legal",
+        title: "Legal documents",
+        subtitle: "Public copies of the CourseHelper Privacy Policy and Terms of Use.",
+        privacyTitle: "Privacy Policy",
+        privacyBody: "How CourseHelper handles recordings, files, AI processing, subscriptions, and account data.",
+        privacyCta: "Open privacy policy",
+        termsTitle: "Terms of Use",
+        termsBody: "Rules for recordings, AI features, subscriptions, and credits.",
+        termsCta: "Open terms",
+        contactLabel: "Contact:"
+      },
+      zh: {
+        eyebrow: "CourseHelper 法律文档",
+        title: "法律文档",
+        subtitle: "CourseHelper 隐私政策与使用条款的公开版本。",
+        privacyTitle: "隐私政策",
+        privacyBody: "说明 CourseHelper 如何处理录音、文件、AI 处理、订阅和账号数据。",
+        privacyCta: "打开隐私政策",
+        termsTitle: "使用条款",
+        termsBody: "说明录音、AI 功能、订阅和 credits 的使用规则。",
+        termsCta: "打开使用条款",
+        contactLabel: "联系邮箱："
+      }
+    };
+
+    const KEY = "coursehelperLegalLang";
+    const params = new URLSearchParams(location.search);
+    let lang = params.get("lang");
+    if (lang !== "zh" && lang !== "en") {
+      lang = localStorage.getItem(KEY) || "en";
+    }
+
+    function apply(lang) {
+      localStorage.setItem(KEY, lang);
+      document.documentElement.lang = lang;
+      Object.entries(COPY[lang]).forEach(([key, value]) => {
+        const node = document.querySelector(`[data-i18n="${key}"]`);
+        if (node) node.textContent = value;
+      });
+      document.getElementById("lang-en").classList.toggle("active", lang === "en");
+      document.getElementById("lang-zh").classList.toggle("active", lang === "zh");
+      document.getElementById("privacy-link").href = `privacy.html?lang=${lang}`;
+      document.getElementById("terms-link").href = `terms.html?lang=${lang}`;
+    }
+
+    document.getElementById("lang-en").addEventListener("click", () => apply("en"));
+    document.getElementById("lang-zh").addEventListener("click", () => apply("zh"));
+    apply(lang);
+  </script>
 </body>
 </html>
